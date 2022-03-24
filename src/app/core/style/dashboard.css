@@ -1,0 +1,445 @@
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding-top: 60px;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.wrapper main {
+  display: flex;
+  height: 100%;
+}
+
+.wrapper main .pages {
+  overflow: auto;
+}
+
+.wrapper main .overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 0.7;
+  display: none;
+}
+
+.wrapper main .overlay.show {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .wrapper main .overlay.show {
+    display: none;
+  }
+}
+
+.wrapper.toggeled-sidebar main .overlay {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .wrapper.toggeled-sidebar main .overlay {
+    display: none;
+  }
+}
+
+.toast {
+  opacity: 1;
+}
+
+
+
+/*====================navbar==============================*/
+.wrapper nav.navbar {
+  height: 60px;
+  padding: 0;
+}
+
+.wrapper nav.navbar .navbar-header .navbar-brand {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.wrapper nav.navbar .navbar-header .navbar-brand span {
+  display: none;
+}
+
+.wrapper nav.navbar .nav-toggler-right {
+  position: relative;
+}
+
+.wrapper nav.navbar .nav-toggler-right button {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.wrapper nav.navbar .nav-toggler-right button img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wrapper nav.navbar .nav-toggler-right .nav-alert {
+  right: 0px;
+  border-width: 1px;
+  width: 9px;
+  height: 9px;
+}
+
+.wrapper nav.navbar .nav-alert {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  border:none;
+  transform: translateX(13px);
+}
+
+.wrapper nav.navbar .nav-alertNew {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  position: absolute;
+  border: none;
+  top: 28px;
+  right: 39px;
+}
+
+
+@media (min-width: 768px) {
+  .wrapper nav.navbar .nav-alert {
+    right: 20px;
+    transform: translateX(0);
+  }
+
+}
+
+.wrapper nav.navbar .nav-alert.user-profile {
+  transform: translateX(2px);
+}
+
+.wrapper nav.navbar .navbar-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper nav.navbar .user-profile span {
+  display: none;
+}
+
+.wrapper nav.navbar .right-nav {
+  border-top: 1px solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: max-content !important;
+}
+
+.wrapper nav.navbar .right-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.wrapper nav.navbar .right-nav ul li {
+  /*flex: 1 1 0;*/
+  /*max-width: 110px;*/
+  padding: 1rem;
+}
+
+.wrapper nav.navbar .right-nav ul li .nav-link .link-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.wrapper nav.navbar .left-nav {
+  display: none;
+}
+
+.wrapper nav.navbar .left-nav input.navbar-search {
+  max-width: 500px;
+  border-radius: 0;
+  border: none;
+  height: 40px;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .wrapper nav.navbar .sidebar-toggler {
+    display: none;
+  }
+
+  .wrapper nav.navbar .navbar-header {
+    width: 260px;
+    margin-left: 0 !important;
+  }
+
+  .wrapper nav.navbar .navbar-header .navbar-brand span {
+    display: inline-block;
+  }
+
+  .wrapper nav.navbar .left-nav {
+    display: flex;
+  }
+
+  .wrapper nav.navbar .nav-link {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  .wrapper nav.navbar .nav-alert {
+    right: 12px;
+  }
+
+  .wrapper nav.navbar .right-nav {
+    height: 100% !important;
+    border-top: none;
+    background: none !important;
+  }
+
+  .wrapper nav.navbar .right-nav ul {
+    margin-left: auto;
+    flex-wrap: nowrap;
+  }
+
+  .wrapper nav.navbar .right-nav ul li {
+    padding: 0;
+  }
+
+  .wrapper nav.navbar .right-nav ul li .nav-link .link-text {
+    display: none;
+  }
+}
+
+/*=====================side bar========================*/
+.wrapper main {
+  position: relative;
+}
+
+.wrapper main .sidebar {
+  height: 100%;
+  width: 260px;
+  position: absolute;
+  transition: left 0.3s ease;
+  left: -260px;
+  top: 0;
+  z-index: 111;
+  overflow: auto;
+}
+
+.wrapper main .sidebar > div {
+  border-bottom: 1px solid;
+}
+
+.wrapper main .sidebar > div:last-child {
+  border-bottom: none;
+}
+
+.wrapper main .sidebar .sidebar-profile .user-picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.wrapper main .sidebar .sidebar-profile .user-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wrapper main .sidebar .sidebar-profile .profile-details .name {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.wrapper main .sidebar .sidebar-profile .profile-details .role {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.wrapper main .sidebar .sidebar-search {
+  display: none;
+}
+
+.wrapper main .sidebar .sidebar-menu > div {
+  padding: 0 1.5rem;
+}
+
+.wrapper main .sidebar .sidebar-menu .menu-header {
+  padding: 0 1.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.wrapper main .sidebar .sidebar-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper main .sidebar .sidebar-menu ul li {
+  display: block;
+}
+
+.wrapper main .sidebar .sidebar-menu ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0px;
+  font-weight: 600;
+}
+
+.wrapper main .sidebar .sidebar-menu ul li a i {
+  font-size: 1rem;
+}
+
+.wrapper main .sidebar .sidebar-menu ul li a span {
+  color: inherit;
+  margin-left: 1rem;
+}
+
+@media (min-width: 768px) {
+  .wrapper main .sidebar {
+    position: static;
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper.pinned-sidebar .navbar-header {
+    width: 70px !important;
+  }
+
+  .wrapper.pinned-sidebar .navbar-header span {
+    display: none !important;
+  }
+
+  .wrapper.pinned-sidebar .sidebar {
+    width: 70px;
+  }
+
+  .wrapper.pinned-sidebar .sidebar .sidebar-profile .user-picture {
+    width: 40px;
+    height: 40px;
+  }
+
+  .wrapper.pinned-sidebar .sidebar .profile-details, .wrapper.pinned-sidebar .sidebar .menu-header, .wrapper.pinned-sidebar .sidebar .view-source {
+    display: none;
+  }
+
+  .wrapper.pinned-sidebar .sidebar .sidebar-menu ul a {
+    padding: 0.5rem;
+    justify-content: center;
+  }
+
+  .wrapper.pinned-sidebar .sidebar .sidebar-menu ul a span {
+    display: none;
+  }
+}
+
+.wrapper.toggeled-sidebar .sidebar {
+  left: 0;
+}
+
+/*============theme=====================*/
+
+
+.wrapper.default-theme {
+  background: #f2f3f8;
+}
+
+.wrapper.default-theme nav.navbar {
+  background: white;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.wrapper.default-theme nav.navbar .right-nav {
+  background: white;
+ }
+
+.wrapper.default-theme nav.navbar .nav-link {
+  color: #3d4465;
+}
+
+.wrapper.default-theme main .overlay {
+  background: #3d4465;
+}
+
+.wrapper.default-theme main .sidebar {
+  background: #fff;
+}
+
+.wrapper.default-theme main .sidebar > div {
+  border-color: rgba(61, 68, 101, .1);
+}
+
+.wrapper.default-theme main .sidebar a.sidebar-link {
+  color: #3d4465;
+}
+
+.wrapper.default-theme main .sidebar .sidebar-profile .name {
+  color: #3d4465;
+}
+
+.wrapper.default-theme main .sidebar .sidebar-menu .menu-header {
+  color: #3d4465;
+}
+
+.wrapper.default-theme main .sidebar .sidebar-menu .menu-items a {
+  color: #3d4465;
+
+}
+
+.wrapper.default-theme main .sidebar .sidebar-menu .menu-items a i {
+  color:#3d4465;
+  border: none;
+  width: auto;
+  font-size: 1.2rem;
+}
+
+.wrapper.default-theme main .sidebar .sidebar-menu .menu-items a:hover, .wrapper.default-theme main .sidebar .sidebar-menu .menu-items a.active {
+  background: #3d4465;
+  color: white;
+}
+
+.wrapper.default-theme main .sidebar .sidebar-menu .menu-items a:hover i, .wrapper.default-theme main .sidebar .sidebar-menu .menu-items a.active i {
+  color: white;
+}
+
+
+@media (max-width: 765px) {
+  .wrapper.default-theme nav.navbar .right-nav {
+    background: white;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2) !important;
+  }
+  .wrapper nav.navbar .nav-alertNew {
+    display:none !important;
+  }
+}

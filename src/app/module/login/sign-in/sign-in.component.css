@@ -1,0 +1,51 @@
+.login-background {
+  min-height: 100vh;
+  background: #707070;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -60px;
+}
+
+.login-card {
+  background: white;
+  min-height: 340px;
+  width: fit-content;
+  width: -moz-fit-content;
+  padding: 15px 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+input {
+  box-shadow: none !important;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.remember-me {
+  margin-left: 10px;
+  position: absolute;
+  width: 75px;
+  top: -1px;
+}
+
+.form-control {
+  width: 300px;
+}
+
+.login-eye {
+  position: absolute;
+  right: 10px;
+  top: 39px;
+}
+
+@media only screen and (max-width: 500px) {
+  .form-control {
+    width: auto;
+  }
+}

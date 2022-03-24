@@ -1,0 +1,22 @@
+i:hover{
+  color: white!important;
+}
+.fa-bars:hover{
+  color: #707070 !important;
+}
+
+.navTopName {
+  font-size: 18px;
+   font-weight: 500;
+  color: #000;
+}
+
+.navBelowName {
+  font-size: 10px;
+   font-weight: 100;
+  color: #000;
+}
+
+.mainpanel {
+  overflow: auto;
+}

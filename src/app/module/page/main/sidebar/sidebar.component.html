@@ -1,0 +1,35 @@
+<aside class="sidebar shadow-sm">
+
+  <div class="sidebar-profile d-flex flex-column justify-content-center pt-5 pb-3">
+    <div class="profile-details text-center pb-4">
+      <img src="../../../../../assets/logo.jpg" alt="" width="75" style="border-radius: 100px">
+      <p class="mb-0 text-uppercase mt-2 font-weight-bold">POS SYSTEM</p>
+     </div>
+  </div>
+  <div class="sidebar-search pt-1 pb-1 pl-3 pr-3">
+    <input class="form-control rounded-pill" name="search" placeholder="Search ..." type="search">
+  </div>
+  <nav class="sidebar-menu pt-3 pb-3">
+    <ul class="menu-items">
+      <li title="Order">
+        <a routerLink="/main/order" routerLinkActive="active">
+           <i class="fas fa-cart-plus dashicon"></i>
+          <span>Order</span>
+        </a>
+      </li>
+      <li title="Customer">
+        <a routerLink="/main/customer" routerLinkActive="active">
+           <i class="fas fa-users dashicon"></i>
+          <span>Customer</span>
+        </a>
+      </li>
+      <li title="Item">
+        <a routerLink="/main/item" routerLinkActive="active">
+           <i class="fas fa-cookie-bite dashicon"></i>
+          <span>Item</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
