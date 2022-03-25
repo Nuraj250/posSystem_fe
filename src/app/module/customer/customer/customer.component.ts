@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {NgxSpinnerService} from 'ngx-spinner';
-import {Customer} from '../Customer';
-import {CustomerService } from 'src/app/core/service/customer.service';
-import {AlertService} from 'ngx-alerts';
-import {Alert } from 'src/assets/alert';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Customer } from '../Customer';
+import { CustomerService } from 'src/app/core/service/customer.service';
+import { AlertService } from 'ngx-alerts';
+import { Alert } from 'src/assets/alert';
 // @ts-ignore
 import alertJson from 'src/assets/alert.json';
 
@@ -67,10 +67,6 @@ export class CustomerComponent implements OnInit {
     savebtn.innerText = 'Save';
   }
 
-  /******************************** end cancel **********************************/
-
-
-  /******************************** start save customer**********************************/
   async saveCustomer(savebtn: HTMLButtonElement): Promise<boolean> {
     return new Promise(resolve => {
 
@@ -95,10 +91,6 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  /******************************** end save customer**********************************/
-
-
-  /******************************** start update customer**********************************/
   async updateCustomer(savebtn: HTMLButtonElement): Promise<boolean> {
     return new Promise(resolve => {
       const customer = new Customer(this.name.value, this.mobile.value, this.address.value, this.customerDetails?.obj?.id);
@@ -120,10 +112,6 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  /******************************** end update customer**********************************/
-
-
-  /******************************** delete customer**********************************/
   async remove(data: Customer, i: number): Promise<any> {
     this.spinner.show();
     this.customerService.deleteCustomer(data?.id).subscribe((res: any) => {
@@ -141,30 +129,22 @@ export class CustomerComponent implements OnInit {
       this.spinner.hide();
     });
   }
-
-  /******************************** delete customer**********************************/
-
-
-  /******************************** start load customer to edit**********************************/
+  
   async edit(data: Customer, i: number, savebtn: HTMLButtonElement, element: HTMLElement): Promise<boolean> {
     await this.spinner.show();
     return new Promise(async resolve => {
       savebtn.innerText = 'Update';
 
-      this.customerDetails = {obj: data, index: i};
+      this.customerDetails = { obj: data, index: i };
 
       this.name.setValue(data.name);
       this.mobile.setValue(data.mobile);
       this.address.setValue(data.address);
-      element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
       await this.spinner.hide();
     });
   }
 
-  /******************************** end load customer to edit**********************************/
-
-
-  /******************************** start load all customer**********************************/
   async loadAllCustomers(): Promise<boolean> {
     return new Promise(async resolve => {
       await this.spinner.show();
@@ -177,8 +157,5 @@ export class CustomerComponent implements OnInit {
       });
     });
   }
-
-  /******************************** end load all customer **********************************/
-
 
 }

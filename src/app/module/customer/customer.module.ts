@@ -14,7 +14,7 @@ import { CustomerComponent } from './customer/customer.component';
     CustomerRoutingModule,
     ReactiveFormsModule,
     ConfirmationPopoverModule.forRoot({
-      confirmButtonType: 'danger', // set defaults here
+      confirmButtonType: 'danger', 
     }),
   ]
 })

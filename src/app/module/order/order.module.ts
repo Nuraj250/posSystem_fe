@@ -13,7 +13,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     OrderRoutingModule,
     ConfirmationPopoverModule.forRoot({
-      confirmButtonType: 'danger', // set defaults here
+      confirmButtonType: 'danger', 
     }),
     ReactiveFormsModule,
   ]

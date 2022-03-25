@@ -106,7 +106,6 @@ export class OrderComponent implements OnInit {
     await this.spinner.hide();
   }
 
-  /****************************** save or update***********************************/
   async save(savebtn: HTMLButtonElement): Promise<any> {
     this.orderForm.markAllAsTouched();
 
@@ -127,18 +126,13 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  /****************************** end of save or update **************************/
-
-  /****************************** start cancel**************************/
   async cancel(savebtn: HTMLButtonElement): Promise<any> {
     this.orderForm.reset();
     this.customerForm.reset();
     savebtn.innerText = 'Add to cart';
   }
 
-  /****************************** end cancel **************************/
 
-  /****************************** start save to cart **************************/
   async saveItemLocally(savebtn: HTMLButtonElement): Promise<boolean> {
     return new Promise(async resolve => {
       await this.savetotable(savebtn);
@@ -147,10 +141,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end save to cart **************************/
-
-
-  /****************************** start updte customer**************************/
   async updateCustomer(savebtn: HTMLButtonElement): Promise<boolean> {
     return new Promise(async (resolve: any) => {
       await this.savetotable(savebtn);
@@ -158,10 +148,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end update customer **************************/
-
-
-  /****************************** start order remove from cart**************************/
   async remove(data: SelectedItem, i: number): Promise<any> {
     this.totalamount.setValue(this.totalamount.value - data.sub_total);
     this.grandtotal.setValue(this.grandtotal.value - data.sub_total);
@@ -169,9 +155,6 @@ export class OrderComponent implements OnInit {
 
   }
 
-  /****************************** end order remove from cart**************************/
-
-  /****************************** start order edit from cart**************************/
   async edit(data: SelectedItem, i: number, savebtn: HTMLButtonElement, element: HTMLElement): Promise<boolean> {
     return new Promise(async resolve => {
 
@@ -185,9 +168,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end order edit from cart**************************/
-
-  /****************************** start load all customer to combo**************************/
   async loadAllCustomers(): Promise<boolean> {
     return new Promise(async resolve => {
       await this.spinner.show();
@@ -201,8 +181,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end load all customer to combo**************************/
-  /****************************** start place order**************************/
   async placeOrder(): Promise<any> {
     this.placeOrderForm.markAllAsTouched();
     if (this.placeOrderForm.valid) {
@@ -212,8 +190,6 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  /****************************** end place order**************************/
-  /****************************** start load all items**************************/
   async loadAllItems(): Promise<boolean> {
     return new Promise(async resolve => {
       this.itemService.getAllItems().subscribe(res => {
@@ -226,18 +202,11 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end load all items**************************/
-
-  /****************************** start change item in combo**************************/
   async changeItem(event: any): Promise<any> {
 
     await this.loadItemDetails();
   }
 
-  /****************************** end change item in combo**************************/
-
-
-  /****************************** start calculate subtotal**************************/
   async calculateSubTotal(): Promise<any> {
 
 
@@ -252,10 +221,6 @@ export class OrderComponent implements OnInit {
 
   }
 
-  /****************************** end calculate subtotal**************************/
-
-
-  /****************************** start calculate total**************************/
   async calculateTotal(subtot: number): Promise<boolean> {
     this.totalamount.value = 0;
     return new Promise(resolve => {
@@ -267,10 +232,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end calculate total**************************/
-
-
-  /****************************** start load all items id**************************/
   async loadItemDetails(): Promise<boolean> {
     this.spinner.show();
     return new Promise(resolve => {
@@ -290,19 +251,11 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end load all items id**************************/
-
-
-  /****************************** start discount order**************************/
   discountItem(): any {
     this.grandtotal.setValue(this.totalamount.value - this.discount.value);
 
   }
 
-  /****************************** end discount order**************************/
-
-
-  /****************************** start place order**************************/
   async saveOrderToDB(): Promise<boolean> {
     this.spinner.show();
     return new Promise(resolve => {
@@ -336,10 +289,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end  place order**************************/
-
-
-  /****************************** start  clear order form*************************/
   clearOrder(): any {
     this.orderForm.reset();
     this.allSelectedItems = [];
@@ -353,10 +302,6 @@ export class OrderComponent implements OnInit {
     this.grandtotal.setValue(this.totalamount.value);
   }
 
-  /****************************** end clear order form************************/
-
-
-  /****************************** start sub total************************/
   private async savetotable(savebtn: HTMLButtonElement): Promise<boolean> {
     this.spinner.show();
     return new Promise(async resolve => {
@@ -386,9 +331,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /****************************** end sub total**************************/
-
-  /******************************** start save customer**********************************/
   async saveCustomer(savebtn: HTMLButtonElement): Promise<boolean> {
     return new Promise(resolve => {
 
@@ -413,6 +355,5 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  /******************************** end save customer**********************************/
 
 }

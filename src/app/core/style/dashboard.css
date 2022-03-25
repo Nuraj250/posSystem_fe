@@ -53,9 +53,6 @@ body {
   opacity: 1;
 }
 
-
-
-/*====================navbar==============================*/
 .wrapper nav.navbar {
   height: 60px;
   padding: 0;
@@ -229,7 +226,6 @@ body {
   }
 }
 
-/*=====================side bar========================*/
 .wrapper main {
   position: relative;
 }
@@ -367,9 +363,6 @@ body {
 .wrapper.toggeled-sidebar .sidebar {
   left: 0;
 }
-
-/*============theme=====================*/
-
 
 .wrapper.default-theme {
   background: #f2f3f8;

@@ -3,8 +3,9 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AlertService} from 'ngx-alerts';
 import {NgxSpinnerService} from 'ngx-spinner';
+import { UserService } from 'src/app/core/service/user.service';
 import {User} from '../User';
-import {UserService} from '../../../core/services/user.service';
+
 
 @Component({
   selector: 'app-sign-in',

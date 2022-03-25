@@ -14,7 +14,7 @@ import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
     ItemRoutingModule,
     ReactiveFormsModule,
     ConfirmationPopoverModule.forRoot({
-      confirmButtonType: 'danger', // set defaults here
+      confirmButtonType: 'danger', 
     }),
   ]
 })

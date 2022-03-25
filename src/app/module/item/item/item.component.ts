@@ -45,16 +45,11 @@ export class ItemComponent implements OnInit {
     await this.spinner.hide();
   }
 
-  /**************************** start cancel add item ********************************/
   async cancel(savebtn: HTMLButtonElement): Promise<any> {
     this.itemForm.reset();
     savebtn.innerText = 'Save';
   }
 
-  /**************************** end cancel add item ********************************/
-
-
-  /**************************** start save or update item ********************************/
   async save(savebtn: HTMLButtonElement): Promise<any> {
     this.itemForm.markAllAsTouched();
 
@@ -69,10 +64,6 @@ export class ItemComponent implements OnInit {
     }
   }
 
-  /**************************** end save or update item ********************************/
-
-
-  /**************************** start save item ********************************/
   async saveItem(savebtn: HTMLButtonElement): Promise<boolean> {
     return new Promise(resolve => {
 
@@ -92,10 +83,6 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  /**************************** end save item ********************************/
-
-
-  /**************************** start update item ********************************/
   async updateItem(savebtn: HTMLButtonElement): Promise<boolean> {
     this.spinner.show();
     return new Promise(resolve => {
@@ -119,10 +106,6 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  /**************************** end update item ********************************/
-
-
-  /**************************** start delete item ********************************/
   async remove(data: Item, i: number): Promise<any> {
 
     this.spinner.show();
@@ -143,10 +126,6 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  /**************************** end delete item ********************************/
-
-
-  /**************************** start load items to feilds ********************************/
   async edit(data: Item, i: number, savebtn: HTMLButtonElement, element: HTMLElement): Promise<boolean> {
     this.spinner.show();
     return new Promise(resolve => {
@@ -161,10 +140,6 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  /**************************** end load items to feilds ********************************/
-
-
-  /**************************** start load all items to table ********************************/
   async loadAllItems(): Promise<boolean> {
     return new Promise(async resolve => {
       await this.spinner.show();
@@ -178,7 +153,6 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  /**************************** end load all items to table ********************************/
 
 
 }
